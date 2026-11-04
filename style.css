@@ -80,3 +80,15 @@ input.invalido { border-color: var(--erro); }
 .secundario { background: rgba(65, 137, 230, .15); color: var(--azul); margin-top: 12px; }
 .link { display: block; text-align: center; margin-top: 20px; color: var(--azul); font-size: 14px; text-decoration: none; }
 .link:hover { text-decoration: underline; }
+
+.google {
+  display: block;
+  margin-top: 12px;
+  height: 48px;
+  line-height: 46px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  color: #333;
+  text-decoration: none;
+}
