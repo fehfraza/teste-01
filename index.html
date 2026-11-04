@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Entrar | Projeto teste</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topo">
+    <span class="marca">minha<strong>loja</strong></span>
+  </header>
+
+  <main class="centro">
+    <form class="cartao" id="login" novalidate>
+      <h1>Digite seu e-mail para entrar</h1>
+
+      <label for="email">E-mail</label>
+      <input id="email" type="email" autocomplete="email" placeholder="voce@exemplo.com">
+      <p class="erro" id="erro-email" hidden>Digite um e-mail válido.</p>
+
+      <label for="senha">Senha</label>
+      <div class="campo-senha">
+        <input id="senha" type="password" autocomplete="current-password" placeholder="Sua senha">
+        <button type="button" id="ver" aria-label="Mostrar senha">Mostrar</button>
+      </div>
+      <p class="erro" id="erro-senha" hidden>A senha precisa ter pelo menos 6 caracteres.</p>
+
+      <button class="principal" type="submit">Entrar</button>
+      <a class="secundario" href="#">Criar conta</a>
+      <a class="link" href="#">Esqueci minha senha</a>
+
+      <p class="ok" id="ok" hidden>Login simulado com sucesso!</p>
+    </form>
+  </main>
+
+  <script>
+    const form = document.getElementById('login');
+    const email = document.getElementById('email');
+    const senha = document.getElementById('senha');
+
+    document.getElementById('ver').addEventListener('click', (e) => {
+      const mostrar = senha.type === 'password';
+      senha.type = mostrar ? 'text' : 'password';
+      e.target.textContent = mostrar ? 'Ocultar' : 'Mostrar';
+    });
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value);
+      const senhaOk = senha.value.length >= 6;
+      document.getElementById('erro-email').hidden = emailOk;
+      document.getElementById('erro-senha').hidden = senhaOk;
+      email.classList.toggle('invalido', !emailOk);
+      senha.classList.toggle('invalido', !senhaOk);
+      document.getElementById('ok').hidden = !(emailOk && senhaOk);
+    });
+  </script>
+</body>
+</html>

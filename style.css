@@ -1,0 +1,82 @@
+:root {
+  --amarelo: #ffe600;
+  --azul: #3483fa;
+  --azul-escuro: #2968c8;
+  --fundo: #ebebeb;
+  --texto: #333;
+  --cinza: #999;
+  --erro: #f23d4f;
+  --ok: #00a650;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--fundo);
+  color: var(--texto);
+  font-family: "Proxima Nova", -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+.topo {
+  background: var(--amarelo);
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .15);
+}
+.marca { font-size: 24px; color: var(--texto); }
+.marca strong { font-weight: 800; }
+.centro { display: flex; justify-content: center; padding: 40px 16px; }
+.cartao {
+  width: 100%;
+  max-width: 400px;
+  background: #fff;
+  border-radius: 6px;
+  padding: 32px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+}
+h1 { font-size: 22px; font-weight: 600; margin: 0 0 24px; }
+label { display: block; font-size: 14px; margin: 16px 0 6px; }
+input {
+  width: 100%;
+  height: 48px;
+  padding: 0 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+input:focus-visible, button:focus-visible, a:focus-visible {
+  outline: 3px solid rgba(52, 131, 250, .5);
+  outline-offset: 1px;
+}
+input.invalido { border-color: var(--erro); }
+.campo-senha { position: relative; }
+.campo-senha button {
+  position: absolute;
+  right: 8px;
+  top: 12px;
+  background: none;
+  border: 0;
+  color: var(--azul);
+  font-size: 14px;
+  cursor: pointer;
+}
+.erro { color: var(--erro); font-size: 13px; margin: 6px 0 0; }
+.ok { color: var(--ok); text-align: center; margin: 16px 0 0; font-weight: 600; }
+.principal, .secundario {
+  display: block;
+  width: 100%;
+  height: 48px;
+  margin-top: 24px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 48px;
+  text-decoration: none;
+  cursor: pointer;
+}
+.principal { background: var(--azul); color: #fff; border: 0; line-height: normal; }
+.principal:hover { background: var(--azul-escuro); }
+.secundario { background: rgba(65, 137, 230, .15); color: var(--azul); margin-top: 12px; }
+.link { display: block; text-align: center; margin-top: 20px; color: var(--azul); font-size: 14px; text-decoration: none; }
+.link:hover { text-decoration: underline; }
