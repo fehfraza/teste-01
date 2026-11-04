@@ -87,7 +87,8 @@ input.invalido { border-color: var(--erro); }
   height: 48px;
   line-height: 46px;
   text-align: center;
-  border: 1px solid #671dc9;
+  border: 1px solid #c9451d;
+ master
   border-radius: 6px;
   color: #333;
   text-decoration: none;
